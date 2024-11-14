@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <title>Подтверждение удаления</title>
+</head>
+<body>
+    <h1>Подтверждение удаления</h1>
+    <p>Вы уверены, что хотите удалить {{ employee.first_name }} {{ employee.last_name }}?</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Удалить" class="button-delete">
+    </form>
+    <a href="{% url 'home' %}">Отмена</a>  
+</body>
+</html>
